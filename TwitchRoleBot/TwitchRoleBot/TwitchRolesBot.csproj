@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TwitchRoleBot.Client\TwitchRolesBot.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TwitchRoleBot.Client\TwitchRolesBot.Client.csproj" />
   </ItemGroup>
 
 </Project>

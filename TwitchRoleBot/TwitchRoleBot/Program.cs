@@ -1,5 +1,5 @@
-using TwitchRoleBot.Client.Pages;
-using TwitchRoleBot.Components;
+using TwitchRolesBot.Client.Pages;
+using TwitchRolesBot.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +26,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(TwitchRoleBot.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(TwitchRolesBot.Client._Imports).Assembly);
 
 app.Run();
