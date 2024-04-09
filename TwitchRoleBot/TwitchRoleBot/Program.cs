@@ -1,4 +1,3 @@
-using TwitchRolesBot.Client.Pages;
 using TwitchRolesBot.Components;
 
 var builder = WebApplication.CreateBuilder(args);
