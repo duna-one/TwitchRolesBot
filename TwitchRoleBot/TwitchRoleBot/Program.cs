@@ -1,5 +1,7 @@
 using Serilog;
+using System.IO;
 using TwitchRolesBot.Components;
+using TwitchRolesBot.Services.Twitch;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddControllers();
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<TwitchService>();
 
 var app = builder.Build();
 
@@ -35,5 +41,8 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(TwitchRolesBot.Client._Imports).Assembly);
+
+app.MapControllers();
+
 
 app.Run();
